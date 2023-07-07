@@ -457,17 +457,35 @@ main{
 .main--photo{
     width: 50%;
     overflow: hidden;
-    height: 60rem;
+    height: 80rem;
 }
 
 .main--photo img{
-    width: 75%;
+    width: 90%;
     display: block;
     margin: 0 auto;
 }
 
 /*On s'occupe de responsive*/
-@media screen and (min-width: 1300px){
+@media screen and (min-width: 1200px){
+    .main--photo img{
+        width: 80%;
+    }    
+}
+
+@media screen and (min-width: 1400px){
+    .main--photo img{
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 1600px){
+    .main--photo img{
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1800px){
     .main--photo img{
         width: 50%;
     }   
