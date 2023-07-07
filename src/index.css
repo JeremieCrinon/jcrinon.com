@@ -23,11 +23,44 @@ html {
 /*On mets la taille de la police à 10px si l'utilisateur à gardé la valeur par défaut de 16px (pour simplifier l'utilisation des rem)*/
 
 
-/*On empeche le site de faire plus de 2000px*/
+/*On empeche le site de faire plus de 2000px (et change la couleur d'arrière plan)*/
 body{
     max-width: 2000px;
     margin: 0 auto;
+    background-color: var(--light);
 }
+/*On empeche le site de faire plus de 2000px (et change la couleur d'arrière plan)*/
+
+/*-------------------------------*/
+/*On s'occupe d'éléments généraux*/
+
+/*On s'occupe du bouton de contact*/
+.contact_button{
+    display: block;
+    background-color: var(--main-color);
+    color: var(--light);
+    font-family: 'Anton', sans-serif;
+    width: min-content;
+    text-decoration: none;
+    font-size: 3.96rem;
+    padding: 0.5rem 4rem;
+    border-radius: 1rem;
+    transform: scale(0.9);
+    transition: all 0.2s;
+}
+
+.contact_button:hover{
+    transform: scale(1);
+}
+
+@media screen and (max-width: 600px){
+    .contact_button{
+        font-size: 2.4rem;
+        padding: 1.5rem 6rem;
+    }   
+}
+/*On s'occupe du bouton de contact*/
+
 
 /*On s'occupe du header*/
 header{
@@ -72,16 +105,37 @@ header{
     font-style: normal;
     font-family: 'Anton', sans-serif;
     font-size: 3.6rem;
-    transition: all 0.2s;
+    position: relative;
 }
 
-.header--nav--ul a:hover{
-    color: var(--main-color);    
+.header--nav--ul a:not(.header--nav--actual)::after{
+    content: "";
+    position: absolute;
+    bottom: 0.4rem;
+    width: 0;
+    left: 0;
+    height: 3px;
+    background-color: var(--main-color);
+    transition: width 0.3s;
 }
 
-.header--nav--actual{
-    text-decoration: underline var(--main-color) !important;
-    text-underline-offset: 0.5rem;
+.header--nav--ul a:not(.header--nav--actual):hover::after{
+    width: 100%;
+}
+
+.header--nav--actual::after{
+    content: "";
+    position: absolute;
+    bottom: 0.4rem; /* Ajustez cette valeur pour positionner correctement le soulignement */
+    width: 100%;
+    left: 0;
+    height: 3px; /* Ajustez l'épaisseur du soulignement ici */
+    background-color: var(--main-color); /* Couleur du soulignement */
+    transition: width 0.3s;    
+}
+
+.remove_after::after{
+    width: 0%;
 }
 
 .header--social_media{
@@ -160,10 +214,20 @@ header{
     display: flex;
     width: 100%;
     position: fixed;
+    z-index: 2;
     top: 30rem;
     height: 40rem;
-    background-color: var(--main-color);
+    background-color: var(--dark);
     justify-content: center;
+}
+
+.header--burger--ul--social_medias svg{
+    width: 5%;
+    margin: 0 2%;
+}
+
+.header--burger--ul--social_medias svg path{
+    fill: var(--light);
 }
 
 /*On fais notre burger*/
@@ -172,6 +236,10 @@ header{
 @media screen and (min-width: 1071px){
     .header--inside_burger{
         display: none !important;
+    }
+
+    .header--burger--checkbox{
+        display: none;
     }
 }
 
@@ -198,6 +266,20 @@ header{
     }
 }
 
+@media screen and (min-width: 600px) and (max-width: 1070px){
+    .header--logo img{
+        width: 30%;
+        margin-top: -2rem;
+    }    
+    .header--burger{
+        width: 20%;
+    }
+
+    .header--burger--checkbox{
+        width: calc(45% / 100 * 20);
+    }
+}
+
 @media screen and (max-width: 860px){
     .header--burger--checkbox:checked ~ .header--inside_burger{
         top: 20rem;
@@ -217,6 +299,215 @@ header{
 }
 /*On s'occupe du responsive*/
 /*On s'occupe du header*/
+
+/*On s'occupe d'éléments généraux*/
+/*-------------------------------*/
+
+/*------------------------*/
+/*On s'occupe d'index.html*/
+
+/*On s'occupe de la section principale*/
+
+main{
+    display: flex;
+}
+
+.main--infos{
+    width: 50%;
+}
+
+.main--infos--title{
+    display: block;
+    background-color: var(--dark);
+    color: var(--light);
+    font-size: 3.96rem;
+    width: 30.8rem;
+    padding: 2rem 0;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    border-radius: 1rem;
+    margin-top: 3rem;
+    margin-left: 3%;
+    max-width: 100%;
+    transform: scale(0.9);
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.main--infos--title:hover{
+    transform: scale(1);
+}
+
+.main--infos--sub_title{
+    font-size: 3.6rem;
+    color: var(--dark);
+    font-family: 'Anton', sans-serif;
+    margin-left: 5%;
+    margin-top: 1rem;
+}
+
+.main--infos--paragraph{
+    margin-left: 5%;
+    font-size: 2.4rem;
+    color: var(--dark);
+    font-family: 'Montserrat', sans-serif;
+    width: 85%;
+    margin-top: 1rem;
+}
+
+.main--infos--cta_buttons{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.main--infos--contact_button{   
+    margin-left: 4%;
+}
+
+.main--infos--portfolio_link{
+    color: var(--dark);
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.4rem;
+    position: relative;
+}
+
+.main--infos--portfolio_link::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    background-color: var(--main-color);
+    transition: width 0.3s;
+    
+}
+
+.main--infos--portfolio_link:hover::after{
+    width: 100%;
+}
+
+.main--infos--portfolio_link span{
+    font-size: 2rem;
+}
+
+.main--infos--contact_infos{
+    display: flex;
+    margin-left: 5%;
+    margin-top: 5rem;
+}
+
+.main--infos--contact_infos_title{
+    font-family: 'Anton', sans-serif;
+    color: var(--dark);   
+    font-size: 3.6rem;
+}
+
+.main--infos--contact--p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: var(--dark);
+}
+
+.main--infos--e_mail{
+    margin-left: 10%;
+}
+
+.main--photo{
+    width: 50%;
+}
+
+.main--photo img{
+    width: 75%;
+    display: block;
+    margin: 0 auto;
+}
+
+/*On s'occupe de responsive*/
+
+@media screen and (max-width: 1070px){
+    .main--infos--contact_infos{
+        flex-direction: column;
+    }       
+
+    .main--infos--e_mail{
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+
+    .main--photo{
+        display: none;
+    }
+
+    .main--infos{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .main--infos{
+        width: 100%;
+    }
+    .main--infos--title{
+        width: 24rem;
+        font-size: 2.4rem;
+        max-width: 95%;
+        margin: 1.5rem auto;
+    }  
+    
+    .main--infos--sub_title{
+        font-size: 2.4rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    .main--infos--paragraph{
+        width: 75%;
+        text-align: center;
+        margin: 1rem auto 0;
+        font-size: 1.6rem;
+    }
+
+    .main--infos--cta_buttons{
+        flex-direction: column;
+    }
+
+    .main--infos--contact_button{
+        margin-left: 0;
+    }
+
+    .main--infos--portfolio_link{
+        font-size: 1.6rem;
+        margin-top: 1rem;
+    }
+
+    .main--infos--portfolio_link span{
+        font-size: 1.4rem;
+    }
+
+    .main--infos--contact_infos{
+        text-align: center;
+    }
+
+    .main--infos--contact_infos_title{
+        font-size: 2.4rem;
+    }
+
+    .main--infos--contact--p{
+        font-size: 1.6rem;
+    }
+}
+
+/*On s'occupe de responsive*/
+
+/*On s'occupe de la section principale*/
+
+/*On s'occupe d'index.html*/
+/*------------------------*/
 
 
 
