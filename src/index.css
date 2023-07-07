@@ -300,6 +300,43 @@ header{
 /*On s'occupe du responsive*/
 /*On s'occupe du header*/
 
+/*On s'occupe du footer*/
+
+footer{
+    background-color: var(--dark);
+    display: flex;
+    justify-content: flex-end;
+}
+
+footer a{
+    color: var(--light);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.4rem;
+    text-decoration-thickness: 3px;
+    padding: 4rem 0;
+    margin-right: 10rem;
+}
+
+@media screen and (max-width: 1070px){
+    footer{
+        margin-top: 5rem;
+    }
+}
+
+@media screen and (max-width: 600px){
+    footer{
+        justify-content: space-around;
+    }
+
+    footer a{
+        margin: 0;
+        font-size: 1.6rem;
+    }
+}
+
+/*On s'occupe du footer*/
+
 /*On s'occupe d'éléments généraux*/
 /*-------------------------------*/
 
@@ -419,6 +456,8 @@ main{
 
 .main--photo{
     width: 50%;
+    overflow: hidden;
+    height: 60rem;
 }
 
 .main--photo img{
@@ -428,6 +467,11 @@ main{
 }
 
 /*On s'occupe de responsive*/
+@media screen and (min-width: 1300px){
+    .main--photo img{
+        width: 50%;
+    }   
+}
 
 @media screen and (max-width: 1070px){
     .main--infos--contact_infos{
