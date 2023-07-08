@@ -571,5 +571,67 @@ main{
 /*On s'occupe d'index.html*/
 /*------------------------*/
 
+/*-------------------------*/
+/*On s'occupe de about.html*/
+
+.about--main{
+    display: flex;
+    flex-direction: column;
+}
+
+.about-main--paragraph{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;   
+    align-self: center; 
+    width: 80%;
+    color: var(--dark);
+    margin-top: 10rem;
+}
+
+.about--main--skills{
+    align-self: center;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about--main--skills--element{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;   
+    color: var(--dark);  
+    margin-top: 5rem;
+}
+
+.about--main--contact_button{
+    margin-left: 10%;
+    margin-top: 10rem;
+}
+
+.about--footer{
+    margin-top: 25rem;
+}
+
+@media screen and (max-width: 600px){
+    .about-main--paragraph{
+        margin-top: 5rem;
+    }
+
+    .about--main--skills--element{
+        margin-top: 3rem;
+    }
+
+    .about--main--contact_button{
+        margin-top: 5rem;
+    }
+
+    .about--footer{
+        margin-top: 10rem;
+    }
+}
+
+/*On s'occupe de about.html*/
+/*-------------------------*/
+
 
 
