@@ -718,5 +718,46 @@ main{
 /*On s'occupe de portfolio.html*/
 /*-----------------------------*/
 
+/*---------------------------*/
+/*On s'occupe de contact.html*/
+.contact--main--contact_infos{
+    width: 100%;
+}
+
+.contact--main--contact_infos--container{
+    margin-left: 5%;
+    margin-top: 5rem;
+}
+
+.contact--main--contact_infos--container--title{
+    font-family: 'Anton', sans-serif;
+    color: var(--dark);   
+    font-size: 3.6rem;   
+}
+
+.contact--main--contact_infos--container--a{   
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.contact--footer{
+    margin-top: 60rem;
+}
+
+@media screen and (max-width: 600px){
+    .contact--main--contact_infos--container--title{
+        font-size: 2.4rem;
+    }
+
+    .contact--main--contact_infos--container--a{
+        font-size: 1.6rem;
+    }
+}
+
+/*On s'occupe de contact.html*/
+/*---------------------------*/
 
 
