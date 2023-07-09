@@ -443,11 +443,12 @@ main{
     font-size: 3.6rem;
 }
 
-.main--infos--contact--p{
+.main--infos--contact--a{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 2.4rem;
     color: var(--dark);
+    text-decoration: none;
 }
 
 .main--infos--e_mail{
@@ -632,6 +633,90 @@ main{
 
 /*On s'occupe de about.html*/
 /*-------------------------*/
+
+/*-----------------------------*/
+/*On s'occupe de portfolio.html*/
+
+.portfolio--main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.portfolio--main--article{
+    width: 28%;
+    transform: scale(0.8);
+    transition: all 0.3s;
+    margin-top: 5rem;
+}
+
+.portfolio--main--article:hover{
+    transform: scale(1);
+}
+
+.portfolio--main--article--img{
+    width: 100%;
+}
+
+.portfolio--main--article--title{
+    font-family: 'Anton', sans-serif;
+    color: var(--dark);   
+    font-size: 3.6rem;   
+    margin-top: 2rem;
+}
+
+.portfolio--main--article--p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;  
+    color: var(--dark);  
+}
+
+.portfolio--main--article--links{
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.portfolio--main--article--link{
+    display: block;
+    width: 40%;
+}
+
+.portfolio--main--article--link--svg{
+    width: 100%;
+}
+
+.portfolio--main--article--link--svg path{
+    fill: var(--dark);
+}
+
+.portfolio--footer{
+    margin-top: 5rem;
+}
+
+@media screen and (max-width: 950px){
+    .portfolio--main--article{
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .portfolio--main--article{
+        width: 90%;
+    }   
+
+    .portfolio--main--article--title{
+        font-size: 2.4rem;
+    }
+
+    .portfolio--main--article--p{
+        font-size: 1.6rem;
+    }
+}
+
+/*On s'occupe de portfolio.html*/
+/*-----------------------------*/
 
 
 
