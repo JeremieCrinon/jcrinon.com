@@ -760,4 +760,19 @@ main{
 /*On s'occupe de contact.html*/
 /*---------------------------*/
 
+/*-------------------------------*/
+/*On s'occupe de credentials.html*/
+
+.credentials--main{
+    display: flex;
+    flex-direction: column;
+}
+
+.credentials--main--element{
+    margin-top: 5rem;
+}
+
+/*On s'occupe de credentials.html*/
+/*-------------------------------*/
+
 
