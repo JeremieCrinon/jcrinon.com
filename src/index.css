@@ -720,6 +720,74 @@ main{
 
 /*---------------------------*/
 /*On s'occupe de contact.html*/
+.contact--main{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact--main--contact_form{
+    width: 80%;
+    align-self: center;
+    margin-top: 5rem;
+    border: 0.5rem solid var(--dark);
+}
+
+.contact--main--contact_form--form--element{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 2rem auto 0;
+}
+
+.contact--main--contact_form--form--element label{
+    color: var(--dark);
+    font-family: 'Anton', sans-serif;
+    font-size: 2.4rem;
+}
+
+.contact--main--contact_form--form--input{
+    height: 3rem;
+    background-color: var(--light);
+    border: none;
+    border-bottom: 0.2rem solid var(--dark);
+}
+
+.contact--main--contact_form--form--input:focus{
+    outline: none;
+    border: 0.2rem solid var(--dark);
+}
+
+#form_name{
+    width: 20%;
+}
+
+#form_email{
+    width: 30%;
+}
+
+#form_message{
+    height: 10rem;
+    resize: none;
+}
+
+#contact--main--contact_form--form--submit{
+    width: 20%;
+    height: 5rem;
+    background-color: var(--main-color);
+    border: none;
+    box-shadow: none;
+    font-family: 'Anton', sans-serif;
+    font-size: 2.4rem;
+    color: var(--light);
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    transition: all 0.2s;
+}
+
+#contact--main--contact_form--form--submit:hover{
+    transform: scale(1.1); 
+}
+
 .contact--main--contact_infos{
     width: 100%;
 }
