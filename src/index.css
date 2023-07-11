@@ -5,6 +5,8 @@
     --main-color-dark: #113773;
     --dark: #01161E;
     --light: #F8F7FF;
+    --validation: #60D394;
+    --miss: #AF3E4D; 
 }
 /*On initialise nos variables*/
 
@@ -771,7 +773,7 @@ main{
 }
 
 #contact--main--contact_form--form--submit{
-    width: 20%;
+    width: 10rem;
     height: 5rem;
     background-color: var(--main-color);
     border: none;
@@ -793,7 +795,7 @@ main{
 }
 
 .contact--main--contact_infos--container{
-    margin-left: 5%;
+    margin-left: 10%;
     margin-top: 5rem;
 }
 
@@ -812,7 +814,27 @@ main{
 }
 
 .contact--footer{
-    margin-top: 60rem;
+    margin-top: 10rem;
+}
+
+@media screen and (max-width: 1000px){
+    #form_name{
+        width: 30%;
+    }
+
+    #form_email{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    #form_name{
+        width: 40%;
+    }
+
+    #form_email{
+        width: 50%;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -821,6 +843,61 @@ main{
     }
 
     .contact--main--contact_infos--container--a{
+        font-size: 1.6rem;
+    }
+
+    #contact--main--contact_form--form--submit, .contact--main--contact_form--form--element label{
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 500px){
+    #form_name{
+        width: 60%;
+    }
+
+    #form_email{
+        width: 70%;
+    }
+}
+
+/*Confirmation su message dans confirmation.html*/
+.confirmation_fail--contact_form{
+    flex-direction: row;
+}
+
+.contact--main--contact_form--confirmation{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: var(--dark);
+    background-color: var(--validation);  
+    display: block;
+    width: 55rem;
+    height: min-content;
+    margin-left: 3%;
+    border-radius: 1rem;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.contact--main--contact_form--fail{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: var(--dark);
+    background-color: var(--miss);  
+    display: block;
+    width: 55rem;
+    height: min-content;
+    margin-left: 3%;
+    border-radius: 1rem;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px){
+    .contact--main--contact_form--confirmation, .contact--main--contact_form--fail{
         font-size: 1.6rem;
     }
 }

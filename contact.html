@@ -72,16 +72,16 @@
 
             <form action="send_mail.php" method="post" onsubmit="return formVerif(event)" class="contact--main--contact_form--form" novalidate>
                 <div class="contact--main--contact_form--form--element">
-                    <label for="contact--main--contact_form--form--name">Entrez votre nom (ou nom de l'entreprise):</label>
-                    <input type="text" id="form_name" class="contact--main--contact_form--form--input" required>   
+                    <label for="form_name">Entrez votre nom (ou nom de l'entreprise):</label>
+                    <input type="text" name="form_name" id="form_name" class="contact--main--contact_form--form--input" required>   
                 </div>
                 <div class="contact--main--contact_form--form--element">
-                    <label for="contact--main--contact_form--form--email">Entrez votre email:</label>
-                    <input type="email" id="form_email" class="contact--main--contact_form--form--input" required>   
+                    <label for="form_email">Entrez votre email:</label>
+                    <input type="email" name="form_email" id="form_email" class="contact--main--contact_form--form--input" required>   
                 </div>
                 <div class="contact--main--contact_form--form--element">
-                    <label for="contact--main--contact_form--form--message">Entrez votre message:</label>
-                    <textarea id="form_message" class="contact--main--contact_form--form--input" required></textarea>  
+                    <label for="form_message">Entrez votre message:</label>
+                    <textarea name="form_message" id="form_message" class="contact--main--contact_form--form--input" required></textarea>  
                 </div>
                 <div class="contact--main--contact_form--form--element">
                     <input type="submit" id="contact--main--contact_form--form--submit" value="Envoyer" required>   
