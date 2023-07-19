@@ -501,6 +501,31 @@ main{
     margin-left: 10%;
 }
 
+.main--infos--contact--a{
+    color: var(--dark);
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.4rem;
+    position: relative;
+}
+
+.main--infos--contact--a::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    background-color: var(--main-color);
+    transition: width 0.3s;
+    
+}
+
+.main--infos--contact--a:hover::after{
+    width: 100%;
+}
+
 .main--photo{
     width: 50%;
     overflow: hidden;
