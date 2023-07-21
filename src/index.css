@@ -36,6 +36,12 @@ body{
 /*-------------------------------*/
 /*On s'occupe d'éléments généraux*/
 
+/*On s'occupe de classes générales*/
+.pos-absolute{
+    position: absolute !important;
+}
+/*On s'occupe de classes générales*/
+
 /*On s'occupe du bouton de contact*/
 .contact_button{
     display: block;
@@ -78,9 +84,8 @@ header{
 }
 
 .header--logo img{
-    width: 50%;
-    margin-bottom: -2.5rem; /*margin négatif car le SVG dépasse vers le bas*/
-    padding-top: 0.2rem;
+    width: 30%;
+    margin: 1rem 0;
 }
 
 .header--nav{
@@ -179,20 +184,35 @@ header{
     border-radius: 10px;
 }
 
-.header--burger--checkbox{
-    position: absolute;
-    width: calc(45% / 100 * 30);
-    aspect-ratio: 10 / 9;
-    right: calc(45% / 100 * 15);
-    /*Sert à rendre la checkbox invisible (visibility: hiden ne marche pas)*/
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    /*Sert à rendre la checkbox invisible (visibility: hiden ne marche pas)*/
-}
-
 .header--inside_burger{
     display: none;
+    position: relative;
+    background-color: var(--dark);
+}
+
+.header--inside_burger--active{
+    display: block;
+}
+
+.header--cross{
+    position: relative;
+}
+
+.header--cross div:nth-of-type(2){
+    transition: all 0.2s;
+    width: 0%;
+}
+
+.header--cross div:nth-of-type(1){
+    transition: all 0.2s 0.2s;
+    top: 40%;
+    transform: rotate(45deg);
+}
+
+.header--cross div:nth-of-type(3){
+    transition: all 0.2s 0.2s;
+    top: 40%;
+    transform: rotate(-45deg);
 }
 
 .header--burger--ul{
@@ -211,7 +231,7 @@ header{
     width: 100%;
 }
 
-.header--burger--checkbox:checked ~ .header--inside_burger{
+/* .header--burger--checkbox:checked ~ .header--inside_burger{
     display: flex;
     width: 100%;
     position: fixed;
@@ -220,7 +240,7 @@ header{
     height: 40rem;
     background-color: var(--dark);
     justify-content: center;
-}
+} */
 
 .header--burger--ul--social_medias svg{
     width: 5%;
@@ -278,11 +298,6 @@ header{
         justify-content: flex-end;
     }
 
-    .header--logo{
-        margin: 3% 0 0;
-        width: 50%;
-    }
-
     .header--change_language{
         display: none;    
     }
@@ -306,13 +321,14 @@ header{
         width: 100%;
         height: 100%;
     }
+    .header--logo img{
+        width: 60%;
+        margin: 2rem 0;
+        margin-left: 30%;
+    }
 }
 
-@media screen and (min-width: 600px) and (max-width: 1070px){
-    .header--logo img{
-        width: 30%;
-        margin-top: -2rem;
-    }    
+@media screen and (min-width: 600px) and (max-width: 1070px){    
     .header--burger{
         width: 20%;
     }
